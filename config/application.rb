@@ -10,11 +10,21 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require 'rspotify'
+require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
+
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+# --need dontenv gem
 Bundler.require(*Rails.groups)
+
+# load .env with api id and secret
+Dotenv::Railtie.load
+
+RSpotify::authenticate(ENV["SPOTIFY_ID"], ENV["SPOTIFY_SECRET"])
 
 module Listentothis
   class Application < Rails::Application
