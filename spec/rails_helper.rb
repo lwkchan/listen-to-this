@@ -7,6 +7,14 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/rails'
+
+OmniAuth.config.test_mode = true
+
+OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({
+  :provider => 'spotify',
+  :uid => '123545'
+})
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
