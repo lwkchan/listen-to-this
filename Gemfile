@@ -47,3 +47,4 @@ gem "rspec-rails", :group => [:development, :test]
 gem "capybara", :group => [:development, :test]
 gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
 gem 'rspotify'
+gem 'omniauth-spotify'
