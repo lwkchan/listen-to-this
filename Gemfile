@@ -44,5 +44,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "rspec-rails", :group => [:development, :test]
+gem "capybara", :group => [:development, :test]
 gem 'dotenv-rails', groups: [:development, :test], require: 'dotenv/rails-now'
 gem 'rspotify'
