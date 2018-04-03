@@ -11,8 +11,16 @@ require 'capybara/rails'
 OmniAuth.config.test_mode = true
 
 OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({
-  :provider => 'spotify',
-  :uid => '123545'
+  'provider' => 'spotify',
+  'uid' => '123545',
+  'user_info' => {
+    'name' => 'mockuser',
+    'image' => 'mock_user_thumbnail_url'
+  },
+  'credentials' => {
+    'token' => 'mock_token',
+    'secret' => 'mock_secret'
+  }
 })
 
 # Add additional requires below this line. Rails is not loaded until this point!
