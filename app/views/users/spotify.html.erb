@@ -1,5 +1,18 @@
-Welcome <%= @spotify_user.display_name %>.
-
-You picked <%= @user_input %>
-
-Here's what we recommend:
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>Welcome <%= @spotify_user.display_name %>.</p>
+    <p>You picked <%= @user_input %></p>
+    <p>Here's some recommendations:</p>
+    <ul>
+      <% @tracks.each do |track| %>
+      <li><%= track.artists.first.name %> - <%= track.name %></li>
+      <% end %>
+    </ul>
+    <p><a href= "<%= @playlist.external_urls['spotify'] %>"> See your playlist on Spotify </a></p>
+  </body>
+</html>

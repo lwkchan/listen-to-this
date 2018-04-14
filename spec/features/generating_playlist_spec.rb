@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'Generating playlist' do
+
   it 'allows user to fill in a form and generate a playlist' do
     visit('/')
     fill_in('playlist', with: 'Jazz')
