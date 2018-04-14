@@ -7,4 +7,11 @@ feature 'Generating playlist' do
     click_on('Generate')
     expect(page).to have_content('Here\'s what we recommend')
   end
+
+  it 'confirms to the user what word they filled the form in with' do
+    visit('/')
+    fill_in('playlist', with: 'Jazz')
+    click_on('Generate')
+    expect(page).to have_content('You picked Jazz')
+  end
 end
