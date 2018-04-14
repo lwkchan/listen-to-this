@@ -1,7 +1,3 @@
-Welcome <%= @spotify_user.display_name %> 
+Welcome <%= @spotify_user.display_name %>
 
-Type in an artist, genre or mood and we'll do the rest
-<%= form_tag("/search", method: "get") do %>
-  <%= text_field_tag(:playlist) %>
-  <%= submit_tag("Generate") %>
-<% end %>
+Here's what we recommend:

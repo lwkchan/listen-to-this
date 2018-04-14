@@ -1,13 +1,14 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
-    <title>Example of the Authorization Code flow with Spotify</title>
+    <meta charset="utf-8">
+    <title>Listen to This</title>
   </head>
-
   <body>
-    <div id="login">
-      <h1>Listen to This</h1>
-      <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
-    </div>
+    Type in an artist, genre or mood and we'll do the rest
+    <%= form_tag("/auth/spotify", method: "get") do %>
+      <%= text_field_tag(:playlist) %>
+      <%= submit_tag("Generate") %>
+    <% end %>
   </body>
 </html>
