@@ -5,7 +5,7 @@ feature 'Generating playlist' do
     visit('/')
     fill_in('playlist', with: 'Jazz')
     click_on('Generate')
-    expect(page).to have_content('Here\'s what we recommend')
+    find_link('See your playlist on Spotify').visible?
   end
 
   it 'confirms to the user what word they filled the form in with' do
